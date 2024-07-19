@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+overflow-y: auto;
+background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+
+}
+.main {
+background-color: #ffffff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 800px;
+width: 100%;
+}
+.container {
+display: flex;
+justify-content: center; /* Center horizontally */
+margin-top: 20px;
+}
+
+.image-container {
+width: 400px;
+height: 300px;
+border: 1px solid #ccc;
+overflow: hidden;
+position: relative;
+margin-right: 20px; 
+}
+
+.wrapper {
+text-align: center;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #22044c;
+}
+/* .container {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+} */
+
+.preview-container {
+border: 1px solid #ccc;
+overflow: hidden;
+position: relative;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+overflow: hidden;
+display: flex;
+
+}
+.preview-container p {
+position: absolute;
+top: 10px; /* Adjust top position as needed */
+width: 100%;
+text-align: center;
+margin: 0;
+}
+
+.preview-container img {
+max-width: 100%; /* Ensure the image fits within the container */
+height: auto; /* Maintain aspect ratio */
+display: block; /* Ensure proper rendering as a block element */
+margin: auto;
+}
+
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+.options {
+margin-top: 20px;
+}
+.options button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #764ba2; 
   color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease,  transform 0.2s ease,box-shadow 0.3s ease;
+}
+.options button:hover {
+  background-color: #764ba2; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+  
+}
+.options button:active {
+transform: translateY(1px); /* Push the button down slightly when pressed */
+box-shadow: none; /* Remove shadow on active state */
 }
 
-.App-link {
-  color: #61dafb;
+
+.options input[type="number"], .options button {
+margin: 5px;
+padding: 8px 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.cropping-container.hide {
+display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.btns {
+margin-top: 20px;
 }
+.btns button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #764ba2; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease,  transform 0.2s ease,box-shadow 0.3s ease;
+}
+.btns button:hover {
+  background-color: #764ba2; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+  
+}
+.btns button:active {
+transform: translateY(1px); /* Push the button down slightly when pressed */
+box-shadow: none; /* Remove shadow on active state */
+}
+.button button{
+padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #764ba2; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease,  transform 0.2s ease,box-shadow 0.3s ease;
+}
+.button button:hover {
+  background-color: #764ba2; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+  
+}
+.button button:active {
+transform: translateY(1px); /* Push the button down slightly when pressed */
+box-shadow: none; /* Remove shadow on active state */
+}
+
+.file-format {
+        /* display: flex; */
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #22044c;
+        justify-content: flex-start;
+        margin-right: 102px;
+    }
+
+    .file-format input[type="radio"] {
+        margin-right: 20px; 
+    }
+
+    .file-format label {
+        margin-right: 30px; 
+        cursor: pointer;
+    }
+
+    .file-format label:last-child {
+        margin-right: 0; 
+    }
+
+.file-type-prompt {
+        position: absolute;
+        top: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: white; */
+        color: red;
+        font-weight: bold;
+        font-size: medium;
+        padding: 10px 25px ;
+        border-radius: 4px;
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        margin-bottom: 10px;
+        text-align: center;
+        z-index: 1000; /* Ensure it appears above other content */
+    }
